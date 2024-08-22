@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier la Mise à Jour</title>
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto space-y-4 my-8 px-4 bg-blue-200 shadow-lg rounded-lg w-11/12 md:w-1/2">
+        <h2 class="text-center text-2xl mb-4 font-bold">Modifier la Mise à Jour</h2>
+        <form method="POST" id="updateForm" class="space-y-8">
+            {% csrf_token %}
+            <!-- Champ date -->
+            <div class="text-center flex flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Date de mise à jour</label>
+               {{form.date}}
+            </div>
+
+            <!-- Champ version -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Version du logiciel</label>
+                {{form.version_Logiciel}}
+            </div>
+
+            <!-- Champ type de logiciel -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Type de logiciel</label>
+                {{form.type_logiciel}}
+            </div>
+
+            <!-- Champ nom du client -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Nom du client</label>
+                {{form.client}}
+            </div>
+
+            <!-- Champ poste -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Poste concerné</label>
+                {{form.poste_concerne}}
+            </div>
+
+            <!-- Champ adresse MAC -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Adresse MAC</label>
+                {{form.addresse_MAC}}
+            </div>
+
+            <!-- Champ nom de l'agent -->
+            <div class="text-center flex-col mb-4">
+                <label class="block text-2xl font-medium text-gray-700">Nom de l'agent</label>
+                {{form.agent}}
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center text-center sm:items-stretch">
+                
+                <div class="flex flex-col sm:flex-row sm:space-x-4 text-2xl hover:bg-blue-600 w-1/2 sm:w-auto">
+                    <!-- Bouton Annuler -->
+                    <button type="reset"
+                            class="bg-red-500 text-white py-2 px-4 text-2xl rounded-md hover:bg-red-500 w-full sm:w-auto mb-4 sm:mb-0text-2xl bg-red-400 hover:bg-red-700 active:bg-violet-700 text-black p-2 rounded-md">
+                        Annuler
+                    </button>
+                    
+                    <!-- Bouton Sauvegarder -->
+                    <button type="submit"
+                            class="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 w-full sm:w-auto text-2xl hover:bg-green-600 active:bg-green-700 bg-green-400 text-black p-2 rounded-md">
+                        Appliquer
+                    </button>
+                </div>
+                
+            </div>
+           
+        </form>
+
+    </div>
+    
+</body>
+</html>
